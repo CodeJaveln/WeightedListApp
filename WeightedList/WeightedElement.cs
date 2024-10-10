@@ -1,9 +1,24 @@
-namespace WeightedList
+namespace WeightedListApp
 {
     public class WeightedElement<T>
     {
         public T Element;
-        public int Weight;
+        public int Weight
+        {
+            get
+            {
+                return Weight;
+            }
+            set
+            {
+                if (value < 1)
+                {
+                    throw new System.Exception("weight can't be less than 1.");
+                }
+
+                Weight = value;
+            }
+        }
 
         public WeightedElement(T element)
             : this(element, 1)
@@ -14,7 +29,7 @@ namespace WeightedList
         {
             if (weight < 1)
             {
-                throw new ArgumentException("weight can't be less than 1.");
+                throw new System.ArgumentException("weight can't be less than 1.");
             }
 
             this.Element = element;
