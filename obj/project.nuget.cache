@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "h9N2vG4CzOZTQ6XmBQri72LuYITTXIQVpw3Z6Im3L1yfn00ZpcvQXAqMAcHG1awqMzuTgVNTEqpJL+H46STziA==",
+  "dgSpecHash": "STgcFhHqQdvrHChdZCr1npi2u9FDpf6KgBdmL5rhnq2eTBZzLIU7u7YBdPt7Qv4TRVvMLuQSvqKIg/M2J829Fg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\simon.malmqvist\\source\\repos\\WeightedListApp\\WeightedListApp.csproj",
+  "projectFilePath": "/home/codejaveln/Documents/GitHub/WeightedListApp/WeightedListApp.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
