@@ -1,6 +1,8 @@
+using System;
+
 namespace WeightedListApp
 {
-    public struct WeightedElement<T>
+    public struct WeightedElement<T> : IEquatable<WeightedElement<T>> where T : IEquatable<T>
     {
         public T Element { get; set; }
         public int Weight { get; set; }
@@ -19,6 +21,26 @@ namespace WeightedListApp
 
             this.Element = element;
             this.Weight = weight;
+        }
+
+        public bool Equals(WeightedElement<T> other)
+        {
+            return Element.Equals(other.Element) && Weight == other.Weight;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (obj is WeightedElement<T> other)
+            {
+                return Equals(other);
+            }
+
+            return false;
+        }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(Element, Weight);
         }
     }
 }

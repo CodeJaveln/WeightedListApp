@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace WeightedListApp
 {
-    public class WeightedList<T> : IEnumerable<T>
+    public class WeightedList<T> : IEnumerable<T> where T : IEquatable<T>
     {
         // Default weight is 1 which is the same as default randomness
 
