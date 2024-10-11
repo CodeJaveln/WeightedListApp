@@ -24,8 +24,10 @@ namespace WeightedListApp
         private List<int> CumulativeWeight;
 
         public WeightedList()
-            : this(4)
         {
+            this.Elements = new List<WeightedElement<T>>();
+            this.TotalWeight = 0;
+            this.CumulativeWeight = new List<int>();
         }
 
         public WeightedList(int capacity)
