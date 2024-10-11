@@ -127,7 +127,7 @@ namespace WeightedListApp
                 throw new ArgumentException("weight can't be less than 1.");
             }
 
-            if (Elements.Find(element => EqualityComparer<T>.Default.Equals(element.Element, item)).Equals(default(WeightedElement<T>)))
+            if (!Elements.Find(element => EqualityComparer<T>.Default.Equals(element.Element, item)).Equals(default(WeightedElement<T>)))
             {
                 throw new ArgumentException("Tried adding an existing item");
             }
@@ -148,7 +148,7 @@ namespace WeightedListApp
 
         public void Add(T item)
         {
-            if (Elements.Find(element => EqualityComparer<T>.Default.Equals(element.Element, item)).Equals(default(WeightedElement<T>)))
+            if (!Elements.Find(element => EqualityComparer<T>.Default.Equals(element.Element, item)).Equals(default(WeightedElement<T>)))
             {
                 throw new ArgumentException("Tried adding an existing item");
             }

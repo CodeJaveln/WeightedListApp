@@ -3,3 +3,13 @@
 /home/codejaveln/Documents/GitHub/WeightedListApp/obj/Debug/net8.0/WeightedListApp.AssemblyInfo.cs
 /home/codejaveln/Documents/GitHub/WeightedListApp/obj/Debug/net8.0/WeightedListApp.csproj.CoreCompileInputs.cache
 /home/codejaveln/Documents/GitHub/WeightedListApp/obj/Debug/net8.0/WeightedListApp.sourcelink.json
+/home/codejaveln/Documents/GitHub/WeightedListApp/bin/Debug/net8.0/WeightedListApp
+/home/codejaveln/Documents/GitHub/WeightedListApp/bin/Debug/net8.0/WeightedListApp.deps.json
+/home/codejaveln/Documents/GitHub/WeightedListApp/bin/Debug/net8.0/WeightedListApp.runtimeconfig.json
+/home/codejaveln/Documents/GitHub/WeightedListApp/bin/Debug/net8.0/WeightedListApp.dll
+/home/codejaveln/Documents/GitHub/WeightedListApp/bin/Debug/net8.0/WeightedListApp.pdb
+/home/codejaveln/Documents/GitHub/WeightedListApp/obj/Debug/net8.0/WeightedListApp.dll
+/home/codejaveln/Documents/GitHub/WeightedListApp/obj/Debug/net8.0/refint/WeightedListApp.dll
+/home/codejaveln/Documents/GitHub/WeightedListApp/obj/Debug/net8.0/WeightedListApp.pdb
+/home/codejaveln/Documents/GitHub/WeightedListApp/obj/Debug/net8.0/WeightedListApp.genruntimeconfig.cache
+/home/codejaveln/Documents/GitHub/WeightedListApp/obj/Debug/net8.0/ref/WeightedListApp.dll
