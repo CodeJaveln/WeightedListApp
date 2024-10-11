@@ -87,7 +87,7 @@ namespace WeightedListApp
 
         public int GetWeight(T item)
         {
-            WeightedElement<T> foundElement = Elements.Find(element => EqualityComparer<T>.Default.Equals(element.Element, item));
+            WeightedElement<T> foundElement = Elements.Find(weightedElement => weightedElement.Element.Equals(item));
             if (foundElement.Equals(default(WeightedElement<T>)))
             {
                 throw new ArgumentException("Tried getting weight of an item not in weighted list");
@@ -127,7 +127,7 @@ namespace WeightedListApp
                 throw new ArgumentException("weight can't be less than 1.");
             }
 
-            if (!Elements.Find(element => EqualityComparer<T>.Default.Equals(element.Element, item)).Equals(default(WeightedElement<T>)))
+            if (Elements.Any(weightedElement => weightedElement.Element.Equals(item)))
             {
                 throw new ArgumentException("Tried adding an existing item");
             }
@@ -148,7 +148,7 @@ namespace WeightedListApp
 
         public void Add(T item)
         {
-            if (!Elements.Find(element => EqualityComparer<T>.Default.Equals(element.Element, item)).Equals(default(WeightedElement<T>)))
+            if (Elements.Any(weightedElement => weightedElement.Element.Equals(item)))
             {
                 throw new ArgumentException("Tried adding an existing item");
             }
@@ -174,7 +174,7 @@ namespace WeightedListApp
                 throw new ArgumentNullException();
             }
 
-            WeightedElement<T> foundElement = Elements.Find(element => EqualityComparer<T>.Default.Equals(element.Element, item));
+            WeightedElement<T> foundElement = Elements.Find(weightedElement => weightedElement.Element.Equals(item));
             if (foundElement.Equals(default(WeightedElement<T>)))
             {
                 throw new ArgumentException("Tried removing item not in weighted list");
@@ -224,7 +224,7 @@ namespace WeightedListApp
 
         public bool Contains(T item)
         {
-            return !Elements.Find(element => EqualityComparer<T>.Default.Equals(element.Element, item)).Equals(default(WeightedElement<T>));
+            return Elements.Any(weightedElement => weightedElement.Element.Equals(item));
         }
 
         public void Clear()
