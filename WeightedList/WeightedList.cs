@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace WeightedListApp
 {
-    public class WeightedList<T> : IEnumerable<T> where T : IEquatable<T>
+    public class WeightedList<T> : IEnumerable<T>
     {
         // Default weight is 1 which is the same as default randomness
 
@@ -77,32 +77,12 @@ namespace WeightedListApp
 
         public int GetWeight(int index)
         {
-            if (index < 0 || index >= Elements.Count)
-            {
-                throw new IndexOutOfRangeException();
-            }
-
             return Elements[index].Weight;
-        }
-
-        public int GetWeight(T item)
-        {
-            WeightedElement<T> foundElement = Elements.Find(weightedElement => weightedElement.Element.Equals(item));
-            if (foundElement.Equals(default(WeightedElement<T>)))
-            {
-                throw new ArgumentException("Tried getting weight of an item not in weighted list");
-            }
-
-            return foundElement.Weight;
         }
 
         public void SetWeight(int weight, int index)
         {
-            if (index < 0 || index >= Elements.Count)
-            {
-                throw new IndexOutOfRangeException();
-            }
-            else if (weight < 1)
+            if (weight < 1)
             {
                 throw new ArgumentException("weight can't be less than 1.");
             }
@@ -127,11 +107,6 @@ namespace WeightedListApp
                 throw new ArgumentException("weight can't be less than 1.");
             }
 
-            if (Elements.Any(weightedElement => weightedElement.Element.Equals(item)))
-            {
-                throw new ArgumentException("Tried adding an existing item");
-            }
-
             if (CumulativeWeight.Count < 1)
             {
                 CumulativeWeight.Add(weight);
@@ -148,11 +123,6 @@ namespace WeightedListApp
 
         public void Add(T item)
         {
-            if (Elements.Any(weightedElement => weightedElement.Element.Equals(item)))
-            {
-                throw new ArgumentException("Tried adding an existing item");
-            }
-
             if (CumulativeWeight.Count < 1)
             {
                 CumulativeWeight.Add(1);
@@ -167,48 +137,8 @@ namespace WeightedListApp
             Elements.Add(new WeightedElement<T>(item));
         }
 
-        public bool Remove(T item)
-        {
-            if (item == null)
-            {
-                throw new ArgumentNullException();
-            }
-
-            WeightedElement<T> foundElement = Elements.Find(weightedElement => weightedElement.Element.Equals(item));
-            if (foundElement.Equals(default(WeightedElement<T>)))
-            {
-                throw new ArgumentException("Tried removing item not in weighted list");
-            }
-
-            int itemIndex = Elements.IndexOf(foundElement);
-            if (itemIndex == -1)
-            {
-                return false;
-            }
-
-            if (!Elements.Remove(foundElement))
-            {
-                throw new Exception("Elements contains item but couldn't remove item.");
-            }
-
-            for (int i = itemIndex + 1; i < CumulativeWeight.Count; i++)
-            {
-                CumulativeWeight[i] -= foundElement.Weight;
-            }
-            CumulativeWeight.RemoveAt(itemIndex);
-
-            TotalWeight -= foundElement.Weight;
-
-            return true;
-        }
-
         public void RemoveAt(int index)
         {
-            if (index < 0 || index >= Elements.Count)
-            {
-                throw new IndexOutOfRangeException();
-            }
-
             int elementWeight = Elements[index].Weight;
 
             Elements.RemoveAt(index);
@@ -220,11 +150,6 @@ namespace WeightedListApp
             CumulativeWeight.RemoveAt(index);
 
             TotalWeight -= elementWeight;
-        }
-
-        public bool Contains(T item)
-        {
-            return Elements.Any(weightedElement => weightedElement.Element.Equals(item));
         }
 
         public void Clear()

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WeightedListApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+889a1bc2d3d9c2b212dd51f320d330a5ab80d582")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b28aef335b7870e80e56eac4dea5fe4c229e888a")]
 [assembly: System.Reflection.AssemblyProductAttribute("WeightedListApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WeightedListApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
