@@ -168,7 +168,8 @@ namespace WeightedListApp
 
         IEnumerator IEnumerable.GetEnumerator()
         {
-            return Elements.GetEnumerator();
+            return Elements.Select(e => e.Element).GetEnumerator();
+
         }
     }
 }
